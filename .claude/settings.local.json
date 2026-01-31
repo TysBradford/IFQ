@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:onepagelove.com)",
+      "WebFetch(domain:saaslandingpage.com)",
+      "WebFetch(domain:www.quitgenius.com)",
+      "Bash(npx serve:*)",
+      "Bash(lsof:*)"
     ]
   }
 }

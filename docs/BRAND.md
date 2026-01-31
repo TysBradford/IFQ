@@ -89,6 +89,28 @@ Our palette is intentionally unexpected for the health/wellness space. No calmin
 
 ---
 
+## Design Excellence
+
+The UI and UX of IFQ must be at the absolute top of the game—worthy of awards and accolades. Every screen, every interaction, every micro-animation should feel like it was hand-crafted by the best of the best in design and usability. We should expect to win top design awards for this work.
+
+This is not a generic app with a coat of paint. It is NOT pedestrian. A core part of the IFQ brand is that we care about the details. This is as premium of a product as one can imagine. Every pixel matters. Every transition matters. Every moment of delight matters.
+
+**What this means in practice:**
+- Interactions feel buttery smooth and intentional
+- Typography, spacing, and layout are pixel-perfect
+- Animations and transitions are crafted, not default
+- Every screen tells a story and guides the user with clarity
+- The app feels like a luxury product, not a health utility
+- Details that most apps skip—we obsess over
+
+**The standard we hold ourselves to:**
+- Apple Design Award calibre
+- The kind of product designers screenshot and share
+- Users notice the craft, even if they can't articulate why it feels so good
+- Nothing ships that feels "good enough"—it ships when it's exceptional
+
+---
+
 ## Voice & Tone
 
 ### Brand Voice

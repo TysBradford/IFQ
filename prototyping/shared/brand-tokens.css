@@ -1,0 +1,68 @@
+/* IFQ Brand Tokens */
+
+:root {
+  /* Colors */
+  --rebel-black: #0D0D0D;
+  --electric-coral: #FF6B5B;
+  --signal-white: #FAFAFA;
+  --victory-gold: #FFD93D;
+  --steady-slate: #2D3436;
+  --soft-ember: #FF8B7A;
+
+  /* Typography */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+/* Utility Classes */
+.font-headline { font-family: var(--font-headline); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); }
+
+/* Shared Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-headline);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--electric-coral);
+  outline-offset: 2px;
+}
+
+/* Shared Form Base */
+.input {
+  font-family: var(--font-body);
+  border: none;
+  outline: none;
+}
+
+.input:focus {
+  outline: 2px solid var(--electric-coral);
+  outline-offset: 0;
+}
