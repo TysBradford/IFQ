@@ -1,3 +1,206 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Emerald Palette CSS Variables */
+:root {
+  --bg: #FAFAF8;
+  --bg-alt: #F0F0EC;
+  --bg-accent: #00A878;
+  --text: #0A0A0A;
+  --text-dim: rgba(10, 10, 10, 0.55);
+  --primary: #00A878;
+  --primary-soft: #2DB88E;
+  --secondary: #F5A623;
+  --tertiary: #7DDBA3;
+  --highlight-bg: #00A878;
+  --highlight-text: #FFFFFF;
+}
+
+/* Base Styles */
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Stickers */
+.sticker {
+  position: fixed;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.8rem;
+  z-index: 50;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+}
+.sticker-1 {
+  top: 20%;
+  right: 4%;
+  background: var(--primary);
+  color: white;
+  transform: rotate(-5deg);
+}
+.sticker-2 {
+  top: 55%;
+  left: 3%;
+  background: var(--secondary);
+  color: var(--text);
+  transform: rotate(3deg);
+}
+.sticker-3 {
+  bottom: 30%;
+  right: 5%;
+  background: var(--text);
+  color: var(--bg);
+  transform: rotate(-2deg);
+}
+
+/* Hero typography sizing */
+.word-quit {
+  font-size: clamp(4.5rem, 12vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.word-like {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.word-mean {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* Highlight styles */
+.highlight {
+  background: var(--primary);
+  color: white;
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+.highlight-warm {
+  background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Form inputs */
+.form-input {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  font-size: 1rem;
+  background: var(--bg);
+  border: none;
+  color: var(--text);
+}
+.form-input::placeholder {
+  color: var(--text-dim);
+}
+.form-input:focus {
+  outline: none;
+  background: var(--bg-alt);
+}
+
+/* Stat cards */
+.stat-card {
+  background: var(--primary);
+  color: white;
+  padding: 2rem 2.5rem;
+  transform: rotate(2deg);
+  border: 3px solid var(--text);
+}
+
+.floating-badge {
+  background: var(--secondary);
+  color: var(--text);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  transform: rotate(-2deg);
+  border: 3px solid var(--text);
+}
+
+/* App mockup placeholder */
+.app-mockup-placeholder {
+  background: var(--bg-alt);
+  border: 3px dashed var(--primary);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  text-align: center;
+  max-width: 280px;
+  transform: rotate(-2deg);
+}
+.app-mockup-placeholder.alt {
+  transform: rotate(2deg);
+}
+
+/* Animated placeholders */
+.animated-placeholder {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem;
+  border: 3px dashed var(--text-dim);
+  border-radius: 8px;
+}
+.animated-asset-dark .animated-placeholder {
+  border-color: rgba(250, 250, 248, 0.3);
+}
+
+/* Feature stamps */
+.feature-stamp {
+  font-weight: 700;
+  font-size: 0.625rem;
+  padding: 0.25rem 0.6rem;
+  background: var(--primary);
+  color: white;
+  transform: rotate(3deg);
+  letter-spacing: 0.02em;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+  max-width: 85%;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.chat-bubble-user {
+  background: var(--bg);
+  border: 2px solid var(--text);
+  border-bottom-right-radius: 4px;
+}
+.chat-bubble-vera {
+  background: var(--primary);
+  color: white;
+  border-bottom-left-radius: 4px;
+}
+
+/* Statement section */
+.statement-accent {
+  text-shadow: 4px 4px 0 var(--secondary);
+}
+
+/* CTA floating stats */
+.cta-float {
+  position: absolute;
+  background: var(--bg-alt);
+  padding: 1rem 1.25rem;
+  text-align: center;
+  border: 3px solid var(--text);
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .sticker { display: none; }
+  .cta-float { display: none; }
+}
+
+@media (max-width: 640px) {
+  .word-quit { font-size: 4rem; }
+  .word-mean { font-size: 3rem; }
+  .stat-card, .floating-badge { transform: none; }
+}

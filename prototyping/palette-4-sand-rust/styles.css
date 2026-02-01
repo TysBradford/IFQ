@@ -1,28 +1,25 @@
-/* REFINED REBEL
+/* PALETTE 4: SAND + RUST
 
-   Combining MSCHF playfulness with warm, welcoming vibes.
-   Less cluttered than experiment-c, more personality than warm-rebel.
+   Warm, natural, desert vibes.
+   Sandy cream background with burnt rust accents.
+   Deep charcoal for grounding text.
+   Amber for celebration moments.
 
-   Palette:
-   - Warm black (#1A1714) - grounded, not harsh
-   - Electric Coral (#FF6B5B) - primary accent, celebrations
-   - Cream (#FAF7F2) - warm text, breathing room
-   - Victory Gold (#FFD93D) - highlights, achievements
-   - Soft Coral (#FF8B7A) - secondary accent
-
-   Vibe: Confident friend who has their shit together. Warm but won't coddle you.
+   Vibe: Joshua Tree clarity meets Brooklyn edge.
 */
 
 :root {
-  --bg: #1A1714;
-  --bg-alt: #252220;
-  --bg-warm: #2D2926;
-  --text: #FAF7F2;
-  --text-dim: rgba(250, 247, 242, 0.6);
-  --primary: #FF6B5B;
-  --primary-soft: #FF8B7A;
-  --secondary: #FFD93D;
-  --accent: #E8D5C4;
+  --bg: #F5EFE6;
+  --bg-alt: #E8E0D4;
+  --bg-accent: #A64B2A;
+  --text: #2A2420;
+  --text-dim: rgba(42, 36, 32, 0.6);
+  --primary: #A64B2A;
+  --primary-soft: #C06842;
+  --secondary: #E6A33E;
+  --accent: #4A6741;
+  --highlight-bg: #A64B2A;
+  --highlight-text: #F5EFE6;
 
   --font-headline: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -39,7 +36,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Stickers - fewer, more intentional */
+/* Stickers */
 .sticker {
   position: fixed;
   font-family: var(--font-headline);
@@ -61,13 +58,13 @@ body {
   top: 55%;
   left: 3%;
   background: var(--secondary);
-  color: var(--bg);
+  color: var(--text);
   transform: rotate(3deg);
 }
 .sticker-3 {
   bottom: 30%;
   right: 5%;
-  background: var(--text);
+  background: var(--accent);
   color: var(--bg);
   transform: rotate(-2deg);
 }
@@ -96,7 +93,7 @@ body {
   font-size: 0.625rem;
   padding: 0.5rem 1rem;
   background: var(--secondary);
-  color: var(--bg);
+  color: var(--text);
   transform: rotate(2deg);
   letter-spacing: 0.05em;
 }
@@ -163,7 +160,7 @@ body {
 .hero-form { max-width: 480px; }
 .form-wrapper {
   display: flex;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--text);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -193,31 +190,11 @@ body {
   letter-spacing: 0.02em;
   transition: background 0.2s ease;
 }
-.hero-btn:hover { background: var(--secondary); }
+.hero-btn:hover { background: var(--secondary); color: var(--text); }
 .form-note {
   margin-top: 1rem;
   font-size: 0.85rem;
   color: var(--text-dim);
-}
-
-/* App Store Badges */
-.app-badges {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-.app-badge {
-  display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.app-badge:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-.app-badge img {
-  height: 48px;
-  width: auto;
 }
 
 .hero-side {
@@ -254,7 +231,7 @@ body {
 }
 .floating-badge {
   background: var(--secondary);
-  color: var(--bg);
+  color: var(--text);
   padding: 1rem 1.5rem;
   text-align: center;
   transform: rotate(-2deg);
@@ -355,7 +332,16 @@ body {
   background: var(--bg-alt);
 }
 .animated-asset-section.dark {
-  background: var(--bg-warm);
+  background: var(--text);
+}
+.animated-asset-section.dark .animated-placeholder {
+  border-color: rgba(245, 239, 230, 0.3);
+}
+.animated-asset-section.dark .animated-label {
+  color: var(--secondary);
+}
+.animated-asset-section.dark .animated-desc {
+  color: rgba(245, 239, 230, 0.6);
 }
 .animated-placeholder {
   max-width: 600px;
@@ -388,12 +374,12 @@ body {
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 2px solid var(--primary);
-  border-bottom: 2px solid var(--primary);
+  border-top: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
 }
 .feature {
   padding: 3.5rem;
-  border-right: 2px solid rgba(255, 107, 91, 0.3);
+  border-right: 2px solid rgba(42, 36, 32, 0.2);
 }
 .feature:last-child { border-right: none; }
 .feature:nth-child(2) { background: var(--bg-alt); }
@@ -418,8 +404,8 @@ body {
   border-radius: 2px;
   letter-spacing: 0.02em;
 }
-.feature:nth-child(2) .feature-stamp { background: var(--secondary); }
-.feature:nth-child(3) .feature-stamp { background: var(--text); }
+.feature:nth-child(2) .feature-stamp { background: var(--secondary); color: var(--text); }
+.feature:nth-child(3) .feature-stamp { background: var(--accent); color: var(--bg); }
 .feature-title {
   font-family: var(--font-headline);
   font-weight: 700;
@@ -485,7 +471,8 @@ body {
   line-height: 1.6;
 }
 .chat-bubble.user {
-  background: var(--bg-warm);
+  background: var(--bg);
+  border: 1px solid rgba(42, 36, 32, 0.15);
   align-self: flex-end;
   border-bottom-right-radius: 4px;
   color: var(--text);
@@ -576,7 +563,7 @@ body {
   font-size: 0.75rem;
   padding: 0.6rem 1rem;
   background: var(--secondary);
-  color: var(--bg);
+  color: var(--text);
   transform: rotate(8deg);
   border-radius: 2px;
 }
@@ -598,7 +585,7 @@ body {
   justify-content: center;
   max-width: 400px;
   margin: 0 auto;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--text);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -613,7 +600,7 @@ body {
 }
 .cta-input:focus {
   outline: none;
-  background: var(--bg-warm);
+  background: var(--bg);
 }
 .cta-btn {
   padding: 1.25rem 2rem;
@@ -626,7 +613,7 @@ body {
   cursor: pointer;
   transition: background 0.2s ease;
 }
-.cta-btn:hover { background: var(--secondary); }
+.cta-btn:hover { background: var(--secondary); color: var(--text); }
 
 .cta-float {
   position: absolute;
@@ -652,7 +639,7 @@ body {
 /* Footer */
 .footer {
   padding: 3rem 4rem;
-  border-top: 2px solid rgba(255, 107, 91, 0.3);
+  border-top: 2px solid rgba(42, 36, 32, 0.2);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -692,7 +679,7 @@ body {
   .hero { grid-template-columns: 1fr; padding: 8rem 3rem 4rem; }
   .hero-side { flex-direction: row; justify-content: flex-start; gap: 1rem; margin-top: 2rem; }
   .features { grid-template-columns: 1fr; }
-  .feature { border-right: none; border-bottom: 2px solid rgba(255, 107, 91, 0.3); }
+  .feature { border-right: none; border-bottom: 2px solid rgba(42, 36, 32, 0.2); }
   .app-preview { grid-template-columns: 1fr; gap: 2rem; }
   .app-preview.alt { direction: ltr; }
   .vera-content { grid-template-columns: 1fr; }
@@ -705,8 +692,8 @@ body {
   .word-quit { font-size: 4rem; }
   .word-mean { font-size: 3rem; }
   .form-wrapper { flex-direction: column; border: none; }
-  .hero-input { border: 2px solid var(--primary); border-bottom: none; border-radius: 4px 4px 0 0; }
-  .hero-btn { border: 2px solid var(--primary); border-radius: 0 0 4px 4px; }
+  .hero-input { border: 2px solid var(--text); border-bottom: none; border-radius: 4px 4px 0 0; }
+  .hero-btn { border: 2px solid var(--text); border-radius: 0 0 4px 4px; }
   .hero-side { flex-direction: column; align-items: stretch; }
   .stat-card, .floating-badge { transform: none; }
   .feature { padding: 2rem 1.5rem; }
@@ -717,8 +704,8 @@ body {
   .statement { padding: 5rem 1.5rem; }
   .cta { padding: 5rem 1.5rem; }
   .cta-form { flex-direction: column; border: none; }
-  .cta-input { border: 2px solid var(--primary); border-bottom: none; border-radius: 4px 4px 0 0; }
-  .cta-btn { border: 2px solid var(--primary); border-radius: 0 0 4px 4px; }
+  .cta-input { border: 2px solid var(--text); border-bottom: none; border-radius: 4px 4px 0 0; }
+  .cta-btn { border: 2px solid var(--text); border-radius: 0 0 4px 4px; }
   .footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
   .footer-left { flex-direction: column; gap: 0.5rem; }
 }

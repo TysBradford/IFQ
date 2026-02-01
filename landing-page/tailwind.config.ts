@@ -9,7 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Add custom brand colors here
+        // Emerald palette
+        paper: "#FAFAF8",
+        "paper-alt": "#F0F0EC",
+        ink: "#0A0A0A",
+        emerald: {
+          DEFAULT: "#00A878",
+          soft: "#2DB88E",
+        },
+        amber: "#F5A623",
+        mint: "#7DDBA3",
+      },
+      fontFamily: {
+        headline: ["var(--font-space-grotesk)", "sans-serif"],
+        body: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-space-mono)", "monospace"],
       },
     },
   },

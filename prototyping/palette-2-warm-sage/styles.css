@@ -1,28 +1,24 @@
-/* REFINED REBEL
+/* PALETTE 2: WARM SAGE
 
-   Combining MSCHF playfulness with warm, welcoming vibes.
-   Less cluttered than experiment-c, more personality than warm-rebel.
+   Earthy, grounded, calming but not clinical.
+   Cream base with sage green accents.
+   Terracotta for warmth and energy.
 
-   Palette:
-   - Warm black (#1A1714) - grounded, not harsh
-   - Electric Coral (#FF6B5B) - primary accent, celebrations
-   - Cream (#FAF7F2) - warm text, breathing room
-   - Victory Gold (#FFD93D) - highlights, achievements
-   - Soft Coral (#FF8B7A) - secondary accent
-
-   Vibe: Confident friend who has their shit together. Warm but won't coddle you.
+   Vibe: A cabin in the woods where you get your shit together.
 */
 
 :root {
-  --bg: #1A1714;
-  --bg-alt: #252220;
-  --bg-warm: #2D2926;
-  --text: #FAF7F2;
-  --text-dim: rgba(250, 247, 242, 0.6);
-  --primary: #FF6B5B;
-  --primary-soft: #FF8B7A;
-  --secondary: #FFD93D;
-  --accent: #E8D5C4;
+  --bg: #F9F6F0;
+  --bg-alt: #EDE8DD;
+  --bg-accent: #4A5D4A;
+  --text: #2C3028;
+  --text-dim: rgba(44, 48, 40, 0.6);
+  --primary: #4A5D4A;
+  --primary-soft: #6B7F6B;
+  --secondary: #C4703F;
+  --accent: #D4956A;
+  --highlight-bg: #4A5D4A;
+  --highlight-text: #F9F6F0;
 
   --font-headline: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -39,7 +35,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Stickers - fewer, more intentional */
+/* Stickers */
 .sticker {
   position: fixed;
   font-family: var(--font-headline);
@@ -90,7 +86,7 @@ body {
   font-size: 1.75rem;
 }
 .logo-i, .logo-f { color: var(--text); }
-.logo-q { color: var(--primary); }
+.logo-q { color: var(--secondary); }
 .nav-badge {
   font-family: var(--font-mono);
   font-size: 0.625rem;
@@ -117,7 +113,7 @@ body {
   position: absolute;
   top: -25px; left: 0;
   width: 80px; height: 6px;
-  background: var(--primary);
+  background: var(--secondary);
   transform: rotate(-2deg);
   border-radius: 3px;
 }
@@ -145,7 +141,7 @@ body {
   line-height: 0.95;
   letter-spacing: -0.02em;
 }
-.punctuation { color: var(--primary); }
+.punctuation { color: var(--secondary); }
 .hero-subtext {
   font-size: 1.15rem;
   line-height: 1.7;
@@ -198,26 +194,6 @@ body {
   margin-top: 1rem;
   font-size: 0.85rem;
   color: var(--text-dim);
-}
-
-/* App Store Badges */
-.app-badges {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-.app-badge {
-  display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.app-badge:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-.app-badge img {
-  height: 48px;
-  width: auto;
 }
 
 .hero-side {
@@ -355,7 +331,16 @@ body {
   background: var(--bg-alt);
 }
 .animated-asset-section.dark {
-  background: var(--bg-warm);
+  background: var(--primary);
+}
+.animated-asset-section.dark .animated-placeholder {
+  border-color: rgba(249, 246, 240, 0.3);
+}
+.animated-asset-section.dark .animated-label {
+  color: var(--secondary);
+}
+.animated-asset-section.dark .animated-desc {
+  color: rgba(249, 246, 240, 0.6);
 }
 .animated-placeholder {
   max-width: 600px;
@@ -393,7 +378,7 @@ body {
 }
 .feature {
   padding: 3.5rem;
-  border-right: 2px solid rgba(255, 107, 91, 0.3);
+  border-right: 2px solid rgba(74, 93, 74, 0.2);
 }
 .feature:last-child { border-right: none; }
 .feature:nth-child(2) { background: var(--bg-alt); }
@@ -485,7 +470,8 @@ body {
   line-height: 1.6;
 }
 .chat-bubble.user {
-  background: var(--bg-warm);
+  background: var(--bg);
+  border: 1px solid rgba(44, 48, 40, 0.15);
   align-self: flex-end;
   border-bottom-right-radius: 4px;
   color: var(--text);
@@ -613,7 +599,7 @@ body {
 }
 .cta-input:focus {
   outline: none;
-  background: var(--bg-warm);
+  background: var(--bg);
 }
 .cta-btn {
   padding: 1.25rem 2rem;
@@ -652,7 +638,7 @@ body {
 /* Footer */
 .footer {
   padding: 3rem 4rem;
-  border-top: 2px solid rgba(255, 107, 91, 0.3);
+  border-top: 2px solid rgba(74, 93, 74, 0.2);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -692,7 +678,7 @@ body {
   .hero { grid-template-columns: 1fr; padding: 8rem 3rem 4rem; }
   .hero-side { flex-direction: row; justify-content: flex-start; gap: 1rem; margin-top: 2rem; }
   .features { grid-template-columns: 1fr; }
-  .feature { border-right: none; border-bottom: 2px solid rgba(255, 107, 91, 0.3); }
+  .feature { border-right: none; border-bottom: 2px solid rgba(74, 93, 74, 0.2); }
   .app-preview { grid-template-columns: 1fr; gap: 2rem; }
   .app-preview.alt { direction: ltr; }
   .vera-content { grid-template-columns: 1fr; }

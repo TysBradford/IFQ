@@ -9,7 +9,12 @@
       "WebFetch(domain:saaslandingpage.com)",
       "WebFetch(domain:www.quitgenius.com)",
       "Bash(npx serve:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(for dir in palette-1-cream-navy palette-2-warm-sage palette-3-paper-electric palette-4-sand-rust palette-5-cloud-violet)",
+      "Bash(do cp /Users/tysonbradford/Documents/Projects/IFQ/prototyping/refined-rebel/index.html /Users/tysonbradford/Documents/Projects/IFQ/prototyping/$dir/)",
+      "Bash(done)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)"
     ]
   }
 }

@@ -551,6 +551,10 @@ Based on launch data, prioritize:
 
 ## Notes
 
+- **PENDING: App Store URLs** - Update landing page app store badge links with actual URLs once apps are published:
+  - App Store: `prototyping/refined-rebel/index.html` (line ~46)
+  - Google Play: same file
+  - Current placeholder: `href="#"`
 - Submit early in the week (Mon/Tue) for fastest review
 - Have someone else proofread all App Store copy
 - Test the complete download → onboard → chat flow on a fresh device
