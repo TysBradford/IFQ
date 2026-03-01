@@ -148,12 +148,12 @@ export function AppStoreBadge({ url }: { url: string }) {
 
 ```tsx
 // Updated Hero section
-<section className="min-h-screen flex flex-col items-center justify-center bg-rebel-black">
-  <h1 className="font-display text-5xl md:text-7xl font-bold text-signal-white uppercase">
+<section className="min-h-screen flex flex-col items-center justify-center bg-ink">
+  <h1 className="font-display text-5xl md:text-7xl font-bold text-paper uppercase">
     Quit Like You Mean It.
   </h1>
 
-  <p className="mt-6 font-body text-lg text-signal-white/80 max-w-md text-center">
+  <p className="mt-6 font-body text-lg text-paper/80 max-w-md text-center">
     The anti-bullshit quit smoking app. Meet Vera—your AI coach
     who's available 24/7, backed by science, and won't lecture you.
   </p>
@@ -165,7 +165,7 @@ export function AppStoreBadge({ url }: { url: string }) {
 
   {/* Secondary CTA: Email for non-iOS or curious */}
   <div className="mt-8">
-    <p className="text-signal-white/50 text-sm mb-2">
+    <p className="text-paper/50 text-sm mb-2">
       Not on iOS? Get notified when we launch on Android.
     </p>
     <EmailCapture variant="inline" />

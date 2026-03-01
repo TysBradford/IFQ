@@ -99,7 +99,7 @@ Build out the full content sections that communicate IFQ's value proposition wit
 **Component: `SolutionSection.tsx`**
 - Feature cards with custom icons (not generic icon-library defaults — if using Lucide, select carefully and consider custom modifications)
 - Staggered reveal animation on scroll with intentional choreography — each card should arrive with spring physics, not a linear fade
-- Electric Coral accents on hover/focus with smooth, non-default transitions
+- Emerald accents on hover/focus with smooth, non-default transitions
 - Cards should have depth and presence — consider subtle glow effects, border treatments, or background texture
 - Hover states that reward exploration: slight lift, accent shift, or content micro-animation
 
@@ -203,7 +203,7 @@ Build out the full content sections that communicate IFQ's value proposition wit
 
 **Component: `HowItWorksSection.tsx`**
 - Vertical timeline on mobile, horizontal on desktop — the layout shift between breakpoints should feel intentionally designed at both sizes, not reflowed
-- Step numbers in Victory Gold with visual weight and presence
+- Step numbers in Amber with visual weight and presence
 - Connecting lines between steps that animate progressively on scroll (draw-on effect)
 - Micro-illustrations or icons for each step — not optional, these add the visual storytelling that separates premium from generic
 - Each step should reveal with scroll-triggered choreography, building anticipation as the user progresses
@@ -269,7 +269,7 @@ Build out the full content sections that communicate IFQ's value proposition wit
 ### How It Works Section (Day 4)
 - [ ] Create `HowItWorksSection.tsx` component
 - [ ] Build timeline layout that feels intentionally designed at both mobile (vertical) and desktop (horizontal)
-- [ ] Design step indicators with visual weight in Victory Gold
+- [ ] Design step indicators with visual weight in Amber
 - [ ] Create micro-illustrations or icons for each step
 - [ ] Implement progressive draw-on animation for connecting line
 - [ ] Write step copy

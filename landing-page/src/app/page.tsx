@@ -1,3 +1,14 @@
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { WaitlistForm } from "@/components/WaitlistForm";
+import {
+  fadeUp,
+  slideLeft,
+  slideRight,
+  scaleUp,
+  staggerContainer,
+  staggerContainerSlow,
+} from "@/lib/animations";
+
 export default function Home() {
   return (
     <>
@@ -20,7 +31,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="min-h-screen grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 pt-32 pb-16 px-6 lg:px-16 items-center max-w-[1400px] mx-auto">
-        <div className="relative">
+        <AnimatedSection variants={slideLeft}>
           <div className="absolute -top-6 left-0 w-20 h-1.5 bg-emerald -rotate-2 rounded" />
           <h1 className="font-headline font-bold mb-8">
             <span className="block word-quit">QUIT</span>
@@ -36,40 +47,42 @@ export default function Home() {
           </p>
 
           <div className="max-w-lg">
-            <div className="flex flex-col sm:flex-row border-[3px] border-ink sm:border-[3px] overflow-hidden">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="form-input flex-1 border-b-[3px] sm:border-b-0 border-ink sm:border-none"
-              />
-              <button className="px-8 py-5 font-headline font-bold text-sm bg-emerald text-white hover:bg-ink transition-colors tracking-wide">
-                JOIN WAITLIST
-              </button>
-            </div>
+            <WaitlistForm />
             <p className="mt-4 text-sm text-ink/55">
-              Join 2,847 others ready to quit for real.
+              Join others ready to quit for real.
             </p>
           </div>
-        </div>
+        </AnimatedSection>
 
-        <div className="flex flex-col gap-4 lg:items-end mt-8 lg:mt-0">
-          <div className="stat-card">
-            <span className="block font-mono text-[0.65rem] opacity-80 tracking-wider">
-              AVG QUIT TIME
-            </span>
-            <span className="block font-mono text-7xl leading-none">47</span>
-            <span className="block font-headline font-bold text-xl">DAYS</span>
-          </div>
-          <div className="floating-badge">
-            <span className="block font-headline font-bold text-2xl">87%</span>
-            <small className="text-sm opacity-80">success rate</small>
-          </div>
-        </div>
+        <AnimatedSection
+          variants={staggerContainer}
+          className="flex flex-col gap-4 lg:items-end mt-8 lg:mt-0"
+        >
+          <AnimatedSection variants={scaleUp}>
+            <div className="stat-card">
+              <span className="block font-mono text-[0.65rem] opacity-80 tracking-wider">
+                AVG QUIT TIME
+              </span>
+              <span className="block font-mono text-7xl leading-none">47</span>
+              <span className="block font-headline font-bold text-xl">
+                DAYS
+              </span>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection variants={scaleUp}>
+            <div className="floating-badge">
+              <span className="block font-headline font-bold text-2xl">
+                87%
+              </span>
+              <small className="text-sm opacity-80">success rate</small>
+            </div>
+          </AnimatedSection>
+        </AnimatedSection>
       </section>
 
       {/* App Preview 1 */}
       <section className="grid lg:grid-cols-2 gap-8 lg:gap-16 py-24 px-6 lg:px-16 max-w-[1400px] mx-auto items-center">
-        <div>
+        <AnimatedSection variants={slideLeft}>
           <span className="inline-block font-mono text-xs tracking-widest text-emerald mb-4">
             THE APP
           </span>
@@ -82,8 +95,8 @@ export default function Home() {
             Track cravings, celebrate wins, and get real-time support—all
             designed for how quitting actually works.
           </p>
-        </div>
-        <div className="flex justify-center">
+        </AnimatedSection>
+        <AnimatedSection variants={slideRight} className="flex justify-center">
           <div className="app-mockup-placeholder">
             <span className="block text-5xl mb-4">📱</span>
             <span className="block font-headline font-semibold text-emerald mb-2">
@@ -94,11 +107,15 @@ export default function Home() {
               stats
             </span>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Animated Asset Section 1 */}
-      <section className="py-32 px-6 lg:px-16 bg-paper-alt">
+      <AnimatedSection
+        as="section"
+        variants={fadeUp}
+        className="py-32 px-6 lg:px-16 bg-paper-alt"
+      >
         <div className="animated-placeholder">
           <div className="text-6xl mb-6">✊→🖕</div>
           <span className="block font-mono text-xs tracking-widest text-emerald mb-2">
@@ -108,12 +125,19 @@ export default function Home() {
             Closed fist opens to middle finger as user scrolls through
           </span>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Features */}
-      <section className="grid lg:grid-cols-3 border-t-[3px] border-b-[3px] border-ink">
+      <AnimatedSection
+        as="section"
+        variants={staggerContainerSlow}
+        className="grid lg:grid-cols-3 border-t-[3px] border-b-[3px] border-ink"
+      >
         {/* Feature 1 */}
-        <div className="p-8 lg:p-14 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-ink">
+        <AnimatedSection
+          variants={fadeUp}
+          className="p-8 lg:p-14 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-ink"
+        >
           <div className="flex justify-between items-start mb-6">
             <span className="font-mono text-xs text-ink/55">01</span>
             <span className="feature-stamp">REAL</span>
@@ -130,10 +154,13 @@ export default function Home() {
               → Know yourself better than nicotine knows you
             </span>
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Feature 2 */}
-        <div className="p-8 lg:p-14 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-ink bg-mint">
+        <AnimatedSection
+          variants={fadeUp}
+          className="p-8 lg:p-14 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-ink bg-mint"
+        >
           <div className="flex justify-between items-start mb-6">
             <span className="font-mono text-xs text-ink/60">02</span>
             <span className="feature-stamp !bg-ink !text-paper">PROVEN</span>
@@ -149,10 +176,10 @@ export default function Home() {
               → CBT, mindfulness, and habit science that works
             </span>
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Feature 3 */}
-        <div className="p-8 lg:p-14">
+        <AnimatedSection variants={fadeUp} className="p-8 lg:p-14">
           <div className="flex justify-between items-start mb-6">
             <span className="font-mono text-xs text-ink/55">03</span>
             <span className="feature-stamp !bg-amber !text-ink">24/7</span>
@@ -163,17 +190,21 @@ export default function Home() {
             THERE
           </h3>
           <p className="text-sm leading-relaxed text-ink/55">
-            Cravings don't wait for office hours. Neither does your support.
+            Cravings don&apos;t wait for office hours. Neither does your
+            support.
             <span className="block text-emerald font-medium mt-3">
               → Get help at 3am when you actually need it
             </span>
           </p>
-        </div>
-      </section>
+        </AnimatedSection>
+      </AnimatedSection>
 
       {/* App Preview 2 */}
       <section className="grid lg:grid-cols-2 gap-8 lg:gap-16 py-24 px-6 lg:px-16 max-w-[1400px] mx-auto items-center">
-        <div className="order-2 lg:order-1 flex justify-center">
+        <AnimatedSection
+          variants={slideLeft}
+          className="order-2 lg:order-1 flex justify-center"
+        >
           <div className="app-mockup-placeholder alt">
             <span className="block text-5xl mb-4">📊</span>
             <span className="block font-headline font-semibold text-emerald mb-2">
@@ -183,8 +214,8 @@ export default function Home() {
               Craving tracker with pattern analysis and trigger identification
             </span>
           </div>
-        </div>
-        <div className="order-1 lg:order-2">
+        </AnimatedSection>
+        <AnimatedSection variants={slideRight} className="order-1 lg:order-2">
           <span className="inline-block font-mono text-xs tracking-widest text-emerald mb-4">
             INSIGHTS
           </span>
@@ -192,56 +223,70 @@ export default function Home() {
             Outsmart your cravings.
           </h2>
           <p className="text-lg leading-relaxed text-ink/55 max-w-md">
-            See patterns you couldn't spot on your own. Know when cravings hit
-            hardest, what triggers them, and what actually helps.
+            See patterns you couldn&apos;t spot on your own. Know when cravings
+            hit hardest, what triggers them, and what actually helps.
           </p>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Vera Section */}
-      <section className="py-24 px-6 lg:px-16 max-w-[1400px] mx-auto">
+      <AnimatedSection
+        as="section"
+        variants={fadeUp}
+        className="py-24 px-6 lg:px-16 max-w-[1400px] mx-auto"
+      >
         <div className="text-center mb-16">
           <span className="inline-block font-mono text-xs tracking-widest text-emerald mb-4">
             MEET VERA
           </span>
           <h2 className="font-headline font-bold text-4xl lg:text-5xl leading-tight">
-            Your AI coach who <span className="highlight-warm">actually gets it</span>.
+            Your AI coach who{" "}
+            <span className="highlight-warm">actually gets it</span>.
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-16 items-start">
           {/* Chat Preview */}
-          <div className="bg-paper-alt border-[3px] border-ink p-6 lg:p-8 flex flex-col gap-4">
-            <div className="chat-bubble chat-bubble-user self-end text-ink">
-              I'm about to lose it. Everyone at this party is smoking and I'm 11
-              days in.
+          <AnimatedSection variants={slideLeft}>
+            <div className="bg-paper-alt border-[3px] border-ink p-6 lg:p-8 flex flex-col gap-4">
+              <div className="chat-bubble chat-bubble-user self-end text-ink">
+                I&apos;m about to lose it. Everyone at this party is smoking and
+                I&apos;m 11 days in.
+              </div>
+              <div className="chat-bubble chat-bubble-vera self-start">
+                <span className="block font-headline font-bold text-xs mb-2 opacity-80">
+                  Vera
+                </span>
+                11 days is real. That&apos;s not nothing—that&apos;s you showing
+                up for yourself 11 times. Right now your brain is screaming
+                because it sees triggers everywhere. What would help more:
+                stepping outside for 5 minutes of fresh air, or do you need to
+                just leave?
+              </div>
+              <div className="chat-bubble chat-bubble-user self-end text-ink">
+                I don&apos;t want to be that person who leaves early
+              </div>
+              <div className="chat-bubble chat-bubble-vera self-start">
+                <span className="block font-headline font-bold text-xs mb-2 opacity-80">
+                  Vera
+                </span>
+                You&apos;re not &quot;that person.&quot; You&apos;re the person
+                who&apos;s 11 days into changing their life. That&apos;s way
+                more interesting than being the person who stayed and smoked.
+                Your call though—I&apos;m here either way.
+              </div>
             </div>
-            <div className="chat-bubble chat-bubble-vera self-start">
-              <span className="block font-headline font-bold text-xs mb-2 opacity-80">
-                Vera
-              </span>
-              11 days is real. That's not nothing—that's you showing up for
-              yourself 11 times. Right now your brain is screaming because it
-              sees triggers everywhere. What would help more: stepping outside
-              for 5 minutes of fresh air, or do you need to just leave?
-            </div>
-            <div className="chat-bubble chat-bubble-user self-end text-ink">
-              I don't want to be that person who leaves early
-            </div>
-            <div className="chat-bubble chat-bubble-vera self-start">
-              <span className="block font-headline font-bold text-xs mb-2 opacity-80">
-                Vera
-              </span>
-              You're not "that person." You're the person who's 11 days into
-              changing their life. That's way more interesting than being the
-              person who stayed and smoked. Your call though—I'm here either
-              way.
-            </div>
-          </div>
+          </AnimatedSection>
 
           {/* Vera Features */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div className="p-6 bg-paper-alt border-2 border-ink">
+          <AnimatedSection
+            variants={staggerContainer}
+            className="grid sm:grid-cols-2 gap-4"
+          >
+            <AnimatedSection
+              variants={fadeUp}
+              className="p-6 bg-paper-alt border-2 border-ink"
+            >
               <span className="block text-2xl mb-3">🧠</span>
               <h4 className="font-headline font-bold mb-2">
                 Remembers Everything
@@ -250,35 +295,53 @@ export default function Home() {
                 Your triggers, your wins, your patterns. Vera learns what works
                 for you.
               </p>
-            </div>
-            <div className="p-6 bg-paper-alt border-2 border-ink">
+            </AnimatedSection>
+            <AnimatedSection
+              variants={fadeUp}
+              className="p-6 bg-paper-alt border-2 border-ink"
+            >
               <span className="block text-2xl mb-3">💬</span>
-              <h4 className="font-headline font-bold mb-2">Real Conversation</h4>
+              <h4 className="font-headline font-bold mb-2">
+                Real Conversation
+              </h4>
               <p className="text-sm leading-relaxed text-ink/55">
                 No scripts. No platitudes. Actual helpful dialogue when you need
                 it.
               </p>
-            </div>
-            <div className="p-6 bg-paper-alt border-2 border-ink">
+            </AnimatedSection>
+            <AnimatedSection
+              variants={fadeUp}
+              className="p-6 bg-paper-alt border-2 border-ink"
+            >
               <span className="block text-2xl mb-3">⏰</span>
-              <h4 className="font-headline font-bold mb-2">Always Available</h4>
+              <h4 className="font-headline font-bold mb-2">
+                Always Available
+              </h4>
               <p className="text-sm leading-relaxed text-ink/55">
-                3am craving? Vera's there. No waiting rooms, no appointments.
+                3am craving? Vera&apos;s there. No waiting rooms, no
+                appointments.
               </p>
-            </div>
-            <div className="p-6 bg-paper-alt border-2 border-ink">
+            </AnimatedSection>
+            <AnimatedSection
+              variants={fadeUp}
+              className="p-6 bg-paper-alt border-2 border-ink"
+            >
               <span className="block text-2xl mb-3">📚</span>
               <h4 className="font-headline font-bold mb-2">Science-Backed</h4>
               <p className="text-sm leading-relaxed text-ink/55">
                 Trained on addiction research and CBT techniques. Not just vibes.
               </p>
-            </div>
-          </div>
+            </AnimatedSection>
+          </AnimatedSection>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Animated Asset Section 2 */}
-      <section className="py-32 px-6 lg:px-16 bg-ink animated-asset-dark">
+      <AnimatedSection
+        as="section"
+        variants={fadeUp}
+        className="py-32 px-6 lg:px-16 bg-ink animated-asset-dark"
+      >
         <div className="animated-placeholder">
           <div className="text-6xl mb-6">🌫️→✨</div>
           <span className="block font-mono text-xs tracking-widest text-emerald mb-2">
@@ -288,22 +351,28 @@ export default function Home() {
             Smoke cloud that clears to reveal clear air/stars as user scrolls
           </span>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Statement */}
-      <section className="py-32 px-6 lg:px-16 bg-emerald text-white text-center">
-        <p className="text-lg opacity-80 mb-2">This isn't about willpower.</p>
+      <AnimatedSection
+        as="section"
+        variants={scaleUp}
+        className="py-32 px-6 lg:px-16 bg-emerald text-white text-center"
+      >
+        <p className="text-lg opacity-80 mb-2">
+          This isn&apos;t about willpower.
+        </p>
         <p className="font-headline font-bold text-4xl lg:text-6xl leading-tight mb-2">
-          It's about having the right tools
+          It&apos;s about having the right tools
         </p>
         <p className="font-headline font-bold text-5xl lg:text-7xl leading-tight statement-accent">
           when it matters.
         </p>
-      </section>
+      </AnimatedSection>
 
       {/* App Preview 3 */}
       <section className="grid lg:grid-cols-2 gap-8 lg:gap-16 py-24 px-6 lg:px-16 max-w-[1400px] mx-auto items-center">
-        <div>
+        <AnimatedSection variants={slideLeft}>
           <span className="inline-block font-mono text-xs tracking-widest text-emerald mb-4">
             MILESTONES
           </span>
@@ -314,8 +383,8 @@ export default function Home() {
             From 24 hours to 1 year—celebrate real progress with milestones that
             actually mean something. No participation trophies.
           </p>
-        </div>
-        <div className="flex justify-center">
+        </AnimatedSection>
+        <AnimatedSection variants={slideRight} className="flex justify-center">
           <div className="app-mockup-placeholder">
             <span className="block text-5xl mb-4">🏆</span>
             <span className="block font-headline font-semibold text-emerald mb-2">
@@ -325,14 +394,18 @@ export default function Home() {
               Milestone celebration screen with confetti and stats
             </span>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-6 lg:px-16 relative">
+      <AnimatedSection
+        as="section"
+        variants={fadeUp}
+        className="py-32 px-6 lg:px-16 relative"
+      >
         <div className="max-w-xl mx-auto text-center relative">
           <div className="absolute -top-8 right-0 lg:-right-5 font-headline font-bold text-xs px-4 py-2 bg-amber text-ink rotate-[8deg] border-2 border-ink">
-            LET'S GO
+            LET&apos;S GO
           </div>
           <h2 className="font-headline font-bold text-7xl lg:text-9xl mb-4 tracking-tight">
             READY?
@@ -341,28 +414,21 @@ export default function Home() {
             Join the waitlist. Get early access. Start quitting like you mean
             it.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center max-w-md mx-auto border-[3px] border-ink sm:border-[3px] overflow-hidden">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="form-input flex-1 bg-paper-alt border-b-[3px] sm:border-b-0 border-ink sm:border-none"
-            />
-            <button className="px-8 py-5 font-headline font-bold text-sm bg-emerald text-white hover:bg-ink transition-colors tracking-wide">
-              I'M IN
-            </button>
+          <div className="max-w-md mx-auto">
+            <WaitlistForm buttonText="I'M IN" inputClassName="bg-paper-alt" />
           </div>
         </div>
 
         {/* Floating stats */}
         <div className="cta-float top-1/4 left-[12%] -rotate-3">
-          <span className="block font-mono text-xl text-emerald">2,847</span>
-          <small className="text-xs text-ink/55">on the waitlist</small>
+          <span className="block font-mono text-xl text-emerald">IFQ</span>
+          <small className="text-xs text-ink/55">coming soon</small>
         </div>
         <div className="cta-float bottom-1/4 right-[12%] rotate-2">
           <span className="block font-mono text-xl text-emerald">47 days</span>
           <small className="text-xs text-ink/55">avg quit time</small>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Footer */}
       <footer className="py-12 px-6 lg:px-16 border-t-[3px] border-ink max-w-[1400px] mx-auto flex flex-col lg:flex-row flex-wrap justify-between items-center gap-6">

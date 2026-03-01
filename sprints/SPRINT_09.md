@@ -42,22 +42,22 @@ struct DaysQuitCounter: View {
             HStack(alignment: .firstTextBaseline, spacing: 4) {
                 Text("\(animatedDays)")
                     .font(.custom("SpaceMono-Regular", size: 72))
-                    .foregroundColor(.electricCoral)
+                    .foregroundColor(.emerald)
                     .contentTransition(.numericText())
 
                 Text(animatedDays == 1 ? "day" : "days")
                     .font(.custom("SpaceGrotesk-Medium", size: 24))
-                    .foregroundColor(.signalWhite.opacity(0.8))
+                    .foregroundColor(.paper.opacity(0.8))
             }
 
             Text("smoke-free")
                 .font(.custom("SpaceGrotesk-Bold", size: 20))
-                .foregroundColor(.signalWhite)
+                .foregroundColor(.paper)
 
             // Start date
             Text("since \(startDate.formatted(.dateTime.month().day().year()))")
                 .font(.custom("Inter-Regular", size: 14))
-                .foregroundColor(.signalWhite.opacity(0.5))
+                .foregroundColor(.paper.opacity(0.5))
         }
         .onAppear {
             animateCounter()
@@ -115,11 +115,11 @@ struct TimeUnit: View {
         VStack(spacing: 4) {
             Text("\(value)")
                 .font(.custom("SpaceMono-Regular", size: 28))
-                .foregroundColor(.victoryGold)
+                .foregroundColor(.amber)
 
             Text(label)
                 .font(.custom("Inter-Regular", size: 12))
-                .foregroundColor(.signalWhite.opacity(0.5))
+                .foregroundColor(.paper.opacity(0.5))
         }
     }
 }
@@ -145,16 +145,16 @@ struct MoneySavedCard: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("MONEY SAVED")
                         .font(.custom("SpaceGrotesk-Medium", size: 12))
-                        .foregroundColor(.signalWhite.opacity(0.5))
+                        .foregroundColor(.paper.opacity(0.5))
 
                     HStack(alignment: .firstTextBaseline, spacing: 2) {
                         Text(currency == "AUD" ? "$" : currency)
                             .font(.custom("SpaceMono-Regular", size: 24))
-                            .foregroundColor(.victoryGold)
+                            .foregroundColor(.amber)
 
                         Text(String(format: "%.0f", amount))
                             .font(.custom("SpaceMono-Regular", size: 40))
-                            .foregroundColor(.victoryGold)
+                            .foregroundColor(.amber)
                     }
                 }
 
@@ -162,18 +162,18 @@ struct MoneySavedCard: View {
 
                 Image(systemName: "dollarsign.circle.fill")
                     .font(.system(size: 40))
-                    .foregroundColor(.victoryGold.opacity(0.3))
+                    .foregroundColor(.amber.opacity(0.3))
             }
 
             // What you could buy
             if !equivalents.isEmpty {
                 Divider()
-                    .background(Color.signalWhite.opacity(0.1))
+                    .background(Color.paper.opacity(0.1))
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("That's enough for:")
                         .font(.custom("Inter-Regular", size: 12))
-                        .foregroundColor(.signalWhite.opacity(0.5))
+                        .foregroundColor(.paper.opacity(0.5))
 
                     HStack(spacing: 16) {
                         ForEach(equivalents.prefix(3), id: \.item) { equivalent in
@@ -184,7 +184,7 @@ struct MoneySavedCard: View {
             }
         }
         .padding(20)
-        .background(Color.steadySlate)
+        .background(Color.paperAlt)
         .cornerRadius(16)
     }
 }
@@ -196,15 +196,15 @@ struct EquivalentBadge: View {
         HStack(spacing: 4) {
             Image(systemName: iconName(for: equivalent.icon))
                 .font(.system(size: 14))
-                .foregroundColor(.electricCoral)
+                .foregroundColor(.emerald)
 
             Text("\(equivalent.quantity)")
                 .font(.custom("SpaceMono-Regular", size: 14))
-                .foregroundColor(.signalWhite)
+                .foregroundColor(.paper)
 
             Text(equivalent.item)
                 .font(.custom("Inter-Regular", size: 12))
-                .foregroundColor(.signalWhite.opacity(0.7))
+                .foregroundColor(.paper.opacity(0.7))
         }
     }
 
@@ -238,7 +238,7 @@ struct HealthTimelineView: View {
             HStack {
                 Text("YOUR BODY IS HEALING")
                     .font(.custom("SpaceGrotesk-Bold", size: 18))
-                    .foregroundColor(.signalWhite)
+                    .foregroundColor(.paper)
 
                 Spacer()
 
@@ -278,7 +278,7 @@ struct HealthTimelineView: View {
             }
         }
         .padding(.vertical, 20)
-        .background(Color.steadySlate)
+        .background(Color.paperAlt)
         .cornerRadius(16)
     }
 
@@ -302,22 +302,22 @@ struct TimelineNode: View {
             Button(action: onTap) {
                 ZStack {
                     Circle()
-                        .stroke(isAchieved ? Color.electricCoral : Color.steadySlate, lineWidth: 3)
+                        .stroke(isAchieved ? Color.emerald : Color.paperAlt, lineWidth: 3)
                         .frame(width: 44, height: 44)
 
                     if isAchieved {
                         Circle()
-                            .fill(Color.electricCoral)
+                            .fill(Color.emerald)
                             .frame(width: 36, height: 36)
 
                         Image(systemName: "checkmark")
                             .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.signalWhite)
+                            .foregroundColor(.paper)
                     } else {
                         // Progress ring
                         Circle()
                             .trim(from: 0, to: progress)
-                            .stroke(Color.electricCoral.opacity(0.5), lineWidth: 3)
+                            .stroke(Color.emerald.opacity(0.5), lineWidth: 3)
                             .frame(width: 44, height: 44)
                             .rotationEffect(.degrees(-90))
                     }
@@ -327,7 +327,7 @@ struct TimelineNode: View {
             // Label
             Text(event.title)
                 .font(.custom("Inter-Medium", size: 12))
-                .foregroundColor(isAchieved ? .signalWhite : .signalWhite.opacity(0.5))
+                .foregroundColor(isAchieved ? .paper : .paper.opacity(0.5))
                 .multilineTextAlignment(.center)
                 .frame(width: 80)
 
@@ -335,7 +335,7 @@ struct TimelineNode: View {
             if isExpanded {
                 Text(event.description)
                     .font(.custom("Inter-Regular", size: 12))
-                    .foregroundColor(.signalWhite.opacity(0.7))
+                    .foregroundColor(.paper.opacity(0.7))
                     .frame(width: 120)
                     .transition(.opacity.combined(with: .move(edge: .top)))
             }
@@ -353,28 +353,28 @@ struct NextMilestoneIndicator: View {
             // Progress ring
             ZStack {
                 Circle()
-                    .stroke(Color.steadySlate, lineWidth: 3)
+                    .stroke(Color.paperAlt, lineWidth: 3)
                     .frame(width: 32, height: 32)
 
                 Circle()
                     .trim(from: 0, to: Double(progress) / 100.0)
-                    .stroke(Color.electricCoral, lineWidth: 3)
+                    .stroke(Color.emerald, lineWidth: 3)
                     .frame(width: 32, height: 32)
                     .rotationEffect(.degrees(-90))
 
                 Text("\(progress)%")
                     .font(.custom("SpaceMono-Regular", size: 10))
-                    .foregroundColor(.signalWhite)
+                    .foregroundColor(.paper)
             }
 
             VStack(alignment: .leading, spacing: 2) {
                 Text("NEXT")
                     .font(.custom("Inter-Medium", size: 10))
-                    .foregroundColor(.signalWhite.opacity(0.5))
+                    .foregroundColor(.paper.opacity(0.5))
 
                 Text(event.title)
                     .font(.custom("Inter-Medium", size: 12))
-                    .foregroundColor(.electricCoral)
+                    .foregroundColor(.emerald)
             }
         }
     }
@@ -396,13 +396,13 @@ struct AchievementsGrid: View {
             HStack {
                 Text("ACHIEVEMENTS")
                     .font(.custom("SpaceGrotesk-Bold", size: 18))
-                    .foregroundColor(.signalWhite)
+                    .foregroundColor(.paper)
 
                 Spacer()
 
                 Text("\(achievements.count) earned")
                     .font(.custom("Inter-Regular", size: 14))
-                    .foregroundColor(.signalWhite.opacity(0.5))
+                    .foregroundColor(.paper.opacity(0.5))
             }
 
             LazyVGrid(columns: [
@@ -434,7 +434,7 @@ struct AchievementBadge: View {
                     Circle()
                         .fill(
                             LinearGradient(
-                                colors: [.victoryGold, .victoryGold.opacity(0.7)],
+                                colors: [.amber, .amber.opacity(0.7)],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
@@ -443,12 +443,12 @@ struct AchievementBadge: View {
 
                     Image(systemName: iconName(for: achievement.icon))
                         .font(.system(size: 28))
-                        .foregroundColor(.rebelBlack)
+                        .foregroundColor(.ink)
                 }
 
                 Text(achievement.title)
                     .font(.custom("Inter-Medium", size: 11))
-                    .foregroundColor(.signalWhite)
+                    .foregroundColor(.paper)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
             }
@@ -485,7 +485,7 @@ struct AchievementDetailSheet: View {
 
     var body: some View {
         ZStack {
-            Color.rebelBlack.ignoresSafeArea()
+            Color.ink.ignoresSafeArea()
 
             VStack(spacing: 24) {
                 // Badge
@@ -493,7 +493,7 @@ struct AchievementDetailSheet: View {
                     Circle()
                         .fill(
                             RadialGradient(
-                                colors: [.victoryGold, .victoryGold.opacity(0.5)],
+                                colors: [.amber, .amber.opacity(0.5)],
                                 center: .center,
                                 startRadius: 0,
                                 endRadius: 60
@@ -503,37 +503,37 @@ struct AchievementDetailSheet: View {
 
                     Image(systemName: "trophy.fill")
                         .font(.system(size: 56))
-                        .foregroundColor(.rebelBlack)
+                        .foregroundColor(.ink)
                 }
                 .padding(.top, 40)
 
                 // Title
                 Text(achievement.title)
                     .font(.custom("SpaceGrotesk-Bold", size: 28))
-                    .foregroundColor(.signalWhite)
+                    .foregroundColor(.paper)
 
                 // Description
                 Text(achievement.description)
                     .font(.custom("Inter-Regular", size: 16))
-                    .foregroundColor(.signalWhite.opacity(0.8))
+                    .foregroundColor(.paper.opacity(0.8))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 32)
 
                 // Celebration message
                 Text(achievement.celebrationMessage)
                     .font(.custom("Inter-Medium", size: 16))
-                    .foregroundColor(.electricCoral)
+                    .foregroundColor(.emerald)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 24)
                     .padding(.vertical, 16)
-                    .background(Color.steadySlate)
+                    .background(Color.paperAlt)
                     .cornerRadius(12)
                     .padding(.horizontal, 24)
 
                 // Achieved date
                 Text("Achieved \(achievement.achievedAt.formatted(.dateTime.month().day()))")
                     .font(.custom("Inter-Regular", size: 14))
-                    .foregroundColor(.signalWhite.opacity(0.5))
+                    .foregroundColor(.paper.opacity(0.5))
 
                 Spacer()
 
@@ -543,10 +543,10 @@ struct AchievementDetailSheet: View {
                 } label: {
                     Text("Nice!")
                         .font(.custom("SpaceGrotesk-Bold", size: 18))
-                        .foregroundColor(.rebelBlack)
+                        .foregroundColor(.ink)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
-                        .background(Color.electricCoral)
+                        .background(Color.emerald)
                         .cornerRadius(12)
                 }
                 .padding(.horizontal, 24)
@@ -570,11 +570,11 @@ struct ProgressDashboardView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.rebelBlack.ignoresSafeArea()
+                Color.ink.ignoresSafeArea()
 
                 if viewModel.isLoading {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .electricCoral))
+                        .progressViewStyle(CircularProgressViewStyle(tint: .emerald))
                 } else if let stats = viewModel.stats {
                     ScrollView {
                         VStack(spacing: 24) {
@@ -631,7 +631,7 @@ struct ProgressDashboardView: View {
                 ToolbarItem(placement: .principal) {
                     Text("YOUR PROGRESS")
                         .font(.custom("SpaceGrotesk-Bold", size: 18))
-                        .foregroundColor(.signalWhite)
+                        .foregroundColor(.paper)
                 }
             }
         }
@@ -646,11 +646,11 @@ struct CigarettesAvoidedCard: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text("CIGARETTES NOT SMOKED")
                     .font(.custom("SpaceGrotesk-Medium", size: 12))
-                    .foregroundColor(.signalWhite.opacity(0.5))
+                    .foregroundColor(.paper.opacity(0.5))
 
                 Text("\(count)")
                     .font(.custom("SpaceMono-Regular", size: 40))
-                    .foregroundColor(.electricCoral)
+                    .foregroundColor(.emerald)
             }
 
             Spacer()
@@ -660,13 +660,13 @@ struct CigarettesAvoidedCard: View {
                 ForEach(0..<min(5, count), id: \.self) { i in
                     Image(systemName: "xmark.circle.fill")
                         .font(.system(size: 24))
-                        .foregroundColor(.electricCoral.opacity(0.3))
+                        .foregroundColor(.emerald.opacity(0.3))
                         .offset(x: CGFloat(i * 8), y: CGFloat(i * -4))
                 }
             }
         }
         .padding(20)
-        .background(Color.steadySlate)
+        .background(Color.paperAlt)
         .cornerRadius(16)
     }
 }
@@ -678,15 +678,15 @@ struct NoActiveQuitView: View {
         VStack(spacing: 24) {
             Image(systemName: "flag.fill")
                 .font(.system(size: 60))
-                .foregroundColor(.electricCoral)
+                .foregroundColor(.emerald)
 
             Text("Ready to quit?")
                 .font(.custom("SpaceGrotesk-Bold", size: 28))
-                .foregroundColor(.signalWhite)
+                .foregroundColor(.paper)
 
             Text("Start tracking your progress and celebrate every smoke-free moment.")
                 .font(.custom("Inter-Regular", size: 16))
-                .foregroundColor(.signalWhite.opacity(0.7))
+                .foregroundColor(.paper.opacity(0.7))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
 
@@ -841,7 +841,7 @@ class ProgressViewModel: ObservableObject {
 - **Celebrate often**: Every milestone gets a moment
 - **Show progress, not just state**: "72% to next milestone"
 - **Keep it scannable**: Big numbers, small labels
-- **Gold = wins**: Use Victory Gold for achievements consistently
+- **Gold = wins**: Use Amber for achievements consistently
 
 ---
 
