@@ -82,8 +82,8 @@ Complete the landing page with pricing, FAQ, social proof, and a final CTA — t
 
 **Component: `PricingSection.tsx`**
 - Single card design (can add tiers later) — but the card itself should be a design moment. Not a generic pricing box. Consider: subtle glow, depth, border treatment, or atmospheric background effect that makes it feel premium.
-- Victory Gold accent for price — the price should have visual weight and presence, rendered in Space Mono with considered sizing
-- Checkmarks in Electric Coral with subtle entrance animations on scroll
+- Amber accent for price — the price should have visual weight and presence, rendered in Space Mono with considered sizing
+- Checkmarks in Emerald with subtle entrance animations on scroll
 - CTA scrolls to hero email capture or has inline form
 - The value anchor ("Less than one pack of cigarettes") should land with impact — consider typographic treatment or emphasis animation
 - Hover state on the card itself: subtle lift, glow intensification, or border shift
@@ -331,8 +331,8 @@ export const trackEvent = (name: string, props?: Record<string, any>) => {
 ### Pricing Section (Day 1)
 - [ ] Create `PricingSection.tsx` component
 - [ ] Design pricing card with depth, glow, and premium presence — not a generic pricing box
-- [ ] Price display in Space Mono with Victory Gold accent and visual weight
-- [ ] Feature list with Electric Coral checkmarks and staggered entrance animation
+- [ ] Price display in Space Mono with Amber accent and visual weight
+- [ ] Feature list with Emerald checkmarks and staggered entrance animation
 - [ ] Value anchor ("Less than one pack") with typographic emphasis
 - [ ] Add CTA that links to email capture
 - [ ] Write pricing copy

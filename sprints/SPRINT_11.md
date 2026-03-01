@@ -50,7 +50,7 @@ Screenshot 1: HERO
 │      [App Preview]           │
 │                              │
 └──────────────────────────────┘
-Background: Rebel Black with Electric Coral accents
+Background: Ink with Emerald accents
 
 Screenshot 2: MEET VERA
 ┌──────────────────────────────┐
@@ -119,9 +119,9 @@ Screenshot 6: ACHIEVEMENTS
 ```
 
 **Screenshot Design Guidelines:**
-- **Background**: Rebel Black (#0D0D0D) with subtle gradients
-- **Text overlay**: Space Grotesk Bold, Signal White
-- **Accent**: Electric Coral for CTAs and highlights
+- **Background**: Ink (#0A0A0A) with subtle gradients
+- **Text overlay**: Space Grotesk Bold, Paper
+- **Accent**: Emerald for CTAs and highlights
 - **Device frame**: Optional—App Store doesn't require them
 - **Copy**: Short, punchy, benefit-focused headlines
 - **Localization**: English (Australia) primary
@@ -305,8 +305,8 @@ IFQ provides AI-powered quit smoking support. We are NOT a medical service.
 | Notification | 60 x 60 (20pt @3x) | Notification center |
 
 **Icon Design:**
-- Bold "Q" lettermark on Rebel Black background
-- Electric Coral accent
+- Bold "Q" lettermark on Ink background
+- Emerald accent
 - Clean, high contrast
 - No text beyond the lettermark (too small to read)
 - Rounded corners handled by iOS (provide square)

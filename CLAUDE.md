@@ -12,18 +12,20 @@
 
 | Name | Hex | RGB | Usage |
 |------|-----|-----|-------|
-| **Rebel Black** | `#0D0D0D` | 13, 13, 13 | Primary brand color, backgrounds, power moments |
-| **Electric Coral** | `#FF6B5B` | 255, 107, 91 | Primary accent, CTAs, celebrations, energy |
-| **Signal White** | `#FAFAFA` | 250, 250, 250 | Text on dark, breathing room, clarity |
-| **Victory Gold** | `#FFD93D` | 255, 217, 61 | Achievements, milestones, rewards |
-| **Steady Slate** | `#2D3436` | 45, 52, 54 | Secondary backgrounds, UI elements |
-| **Soft Ember** | `#FF8B7A` | 255, 139, 122 | Lighter accent, supportive moments |
+| **Ink** | `#0A0A0A` | 10, 10, 10 | Primary text, borders, power moments |
+| **Emerald** | `#00A878` | 0, 168, 120 | Primary accent, CTAs, energy, action |
+| **Emerald Soft** | `#2DB88E` | 45, 184, 142 | Lighter accent, supportive moments |
+| **Paper** | `#FAFAF8` | 250, 250, 248 | Primary background, breathing room, clarity |
+| **Paper Alt** | `#F0F0EC` | 240, 240, 236 | Secondary backgrounds, UI elements |
+| **Amber** | `#F5A623` | 245, 166, 35 | Achievements, milestones, rewards |
+| **Mint** | `#7DDBA3` | 125, 219, 163 | Tertiary accent, feature highlights |
 
 **Color Psychology:**
-- Black grounds us in seriousness and sophistication
-- Coral brings the fire, the fight, the human warmth
-- Gold celebrates every single win
-- **Avoid:** clinical blues, passive greens, anything that feels like a hospital waiting room
+- Ink grounds us in seriousness and confidence
+- Emerald brings the energy, the fight, the forward momentum
+- Amber celebrates every single win
+- Mint adds depth and freshness
+- **Avoid:** clinical blues, passive pinks, anything that feels like a hospital waiting room
 
 ### Typography
 

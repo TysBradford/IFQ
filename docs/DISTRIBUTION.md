@@ -15,7 +15,7 @@
 **Visual Assets:**
 - Screenshots showcasing Vera conversations, progress tracking, milestone celebrations
 - Preview video: 15-30 second emotional hook showing the quit journey
-- Icon: Bold IFQ mark in Rebel Black + Electric Coral
+- Icon: Bold IFQ mark in Ink + Emerald
 
 **Ratings & Reviews Strategy:**
 - Prompt for review at positive moments (milestone celebrations, streak achievements)

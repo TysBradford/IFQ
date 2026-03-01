@@ -8,22 +8,24 @@ Define in Asset Catalog or as Swift extensions:
 
 ```swift
 extension Color {
-    static let rebelBlack = Color(red: 13/255, green: 13/255, blue: 13/255)
-    static let electricCoral = Color(red: 255/255, green: 107/255, blue: 91/255)
-    static let signalWhite = Color(red: 250/255, green: 250/255, blue: 250/255)
-    static let victoryGold = Color(red: 255/255, green: 217/255, blue: 61/255)
-    static let steadySlate = Color(red: 45/255, green: 52/255, blue: 54/255)
-    static let softEmber = Color(red: 255/255, green: 139/255, blue: 122/255)
+    static let ink = Color(red: 10/255, green: 10/255, blue: 10/255)
+    static let emerald = Color(red: 0/255, green: 168/255, blue: 120/255)
+    static let emeraldSoft = Color(red: 45/255, green: 184/255, blue: 142/255)
+    static let paper = Color(red: 250/255, green: 250/255, blue: 248/255)
+    static let paperAlt = Color(red: 240/255, green: 240/255, blue: 236/255)
+    static let amber = Color(red: 245/255, green: 166/255, blue: 35/255)
+    static let mint = Color(red: 125/255, green: 219/255, blue: 163/255)
 }
 ```
 
 Hex values:
-- Rebel Black: `#0D0D0D`
-- Electric Coral: `#FF6B5B`
-- Signal White: `#FAFAFA`
-- Victory Gold: `#FFD93D`
-- Steady Slate: `#2D3436`
-- Soft Ember: `#FF8B7A`
+- Ink: `#0A0A0A`
+- Emerald: `#00A878`
+- Emerald Soft: `#2DB88E`
+- Paper: `#FAFAF8`
+- Paper Alt: `#F0F0EC`
+- Amber: `#F5A623`
+- Mint: `#7DDBA3`
 
 ## Typography
 
@@ -37,47 +39,47 @@ Hex values:
 ## Component Patterns
 
 ### Primary Buttons
-- Background: Electric Coral
-- Text: Rebel Black or Signal White
+- Background: Emerald
+- Text: White or Ink
 - Font: Space Grotesk Medium
 - High contrast, bold presence
 
 ### Secondary Buttons
-- Background: Steady Slate
-- Text: Signal White
-- Outlined variant: Electric Coral border
+- Background: Paper Alt
+- Text: Ink
+- Outlined variant: Emerald border
 
 ### Cards
-- Background: Steady Slate on Rebel Black
-- Subtle shadow or border for depth
+- Background: Paper Alt on Paper
+- Ink border for depth
 - Rounded corners (moderate, not excessive)
 
 ### Stats Display
 - Font: Space Mono
 - Numbers prominent
-- Use Victory Gold for achievements/milestones
+- Use Amber for achievements/milestones
 
 ### Navigation
-- Dark backgrounds (Rebel Black or Steady Slate)
-- Active state: Electric Coral accent
+- Paper backgrounds with Ink borders
+- Active state: Emerald accent
 - Font: Space Grotesk Medium
 
-## Dark Mode
+## Color Mode
 
-The app should be **dark mode by default**:
-- Primary background: Rebel Black
-- Secondary surfaces: Steady Slate
-- Text: Signal White
-- Accents: Electric Coral, Victory Gold
+The app uses a **paper-first** light aesthetic:
+- Primary background: Paper
+- Secondary surfaces: Paper Alt
+- Text: Ink
+- Accents: Emerald, Amber
 
-Light mode is optional/secondary if supported.
+Dark mode can adapt: Ink backgrounds, Paper text, Emerald/Amber accents.
 
 ## Vera Chat Interface
 
-- Vera messages: Steady Slate bubbles
-- User messages: Electric Coral or subtle outline
+- Vera messages: Emerald bubbles with white text
+- User messages: Paper with Ink border
 - Timestamps: Muted, Space Mono
-- Input field: Dark with Signal White text
+- Input field: Paper Alt with Ink text
 
 ## Design Excellence
 
@@ -109,7 +111,7 @@ The IFQ app must be award-calibre work. Every screen, every interaction, every m
 - Bold, not soft or pastel
 - Avoid clinical/medical aesthetic
 - No stock photo vibes
-- Dark, confident, modern
+- Clean, confident, editorial
 
 ## Iconography
 
@@ -122,7 +124,7 @@ The IFQ app must be award-calibre work. Every screen, every interaction, every m
 ## What to Avoid
 
 - iOS default blue tints
-- Clinical whites as primary background
 - Soft, muted color schemes
 - Pastel wellness aesthetics
 - Generic health app patterns
+- Clinical blues or passive pinks

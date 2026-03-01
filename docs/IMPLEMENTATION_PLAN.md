@@ -7,13 +7,13 @@ This document outlines the sprint-by-sprint roadmap for building IFQ from scaffo
 ## Progress Tracker
 
 **Current Sprint**: Sprint 1
-**Last Updated**: 2025-01-25
+**Last Updated**: 2026-03-02
 
 ### Phase Summary
 
 | Phase | Focus | Sprints | Status | Progress |
 |-------|-------|---------|--------|----------|
-| 1 | Audience Building | 1-3 | 🟡 In Progress | 0/3 sprints |
+| 1 | Audience Building | 1-3 | 🟡 In Progress | 1/3 sprints |
 | 2 | Backend Foundation | 4-6 | ⚪ Not Started | 0/3 sprints |
 | 3 | iOS App MVP | 7-10 | ⚪ Not Started | 0/4 sprints |
 | 4 | Launch | 11-12 | ⚪ Not Started | 0/2 sprints |
@@ -23,8 +23,8 @@ This document outlines the sprint-by-sprint roadmap for building IFQ from scaffo
 
 | Sprint | Theme | Status | Criteria Met |
 |--------|-------|--------|--------------|
-| 1 | Landing Page Foundation — Set the Standard | 🟡 In Progress | 0/4 |
-| 2 | Landing Page Content — Tell the Story Beautifully | ⚪ Not Started | 0/4 |
+| 1 | Landing Page Foundation — Set the Standard | 🟢 Complete | 4/4 |
+| 2 | Landing Page Content — Tell the Story Beautifully | 🟡 In Progress | 0/4 |
 | 3 | Landing Page Launch — Go Live Flawlessly | ⚪ Not Started | 0/5 |
 | 4 | Database & Auth | ⚪ Not Started | 0/4 |
 | 5 | Vera AI Core | ⚪ Not Started | 0/4 |
@@ -57,23 +57,23 @@ Build the landing page first to start capturing emails and validating interest w
 
 ### Sprint 1: Landing Page Foundation
 
-**Status**: 🟡 In Progress
+**Status**: 🟢 Complete
 **Theme**: Set the standard
 
 **Key Deliverables**:
-- [ ] Next.js project setup with TypeScript
-- [ ] Tailwind CSS configured with IFQ brand tokens (colors, typography)
-- [ ] Hero section with value proposition and email capture — award-calibre first impression
-- [ ] Framer Motion animation system with shared spring/easing presets
-- [ ] Supabase integration for email list storage
-- [ ] Mobile-responsive foundation
+- [x] Next.js project setup with TypeScript
+- [x] Tailwind CSS configured with IFQ brand tokens (colors, typography)
+- [x] Hero section with value proposition and email capture — award-calibre first impression
+- [x] Framer Motion animation system with shared spring/easing presets
+- [x] Supabase integration for email list storage
+- [x] Mobile-responsive foundation
 
 **Success Criteria**:
-- [ ] Landing page runs locally with hot reload
-- [ ] Email capture form saves to Supabase
-- [ ] Brand colors and fonts match BRAND.md spec
-- [ ] Hero entrance animation is choreographed and premium
-- [ ] All interaction states (focus, hover, loading, success) feel crafted
+- [x] Landing page runs locally with hot reload
+- [x] Email capture form saves to Supabase
+- [x] Brand colors and fonts match BRAND.md spec
+- [x] Hero entrance animation is choreographed and premium
+- [x] All interaction states (focus, hover, loading, success) feel crafted
 - [ ] Lighthouse mobile score > 90
 
 **Details**: [/sprints/SPRINT_01.md](/sprints/SPRINT_01.md)

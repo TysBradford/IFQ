@@ -8,12 +8,15 @@ Use these exact values in `tailwind.config.ts`:
 
 ```ts
 colors: {
-  'rebel-black': '#0D0D0D',
-  'electric-coral': '#FF6B5B',
-  'signal-white': '#FAFAFA',
-  'victory-gold': '#FFD93D',
-  'steady-slate': '#2D3436',
-  'soft-ember': '#FF8B7A',
+  paper: '#FAFAF8',
+  'paper-alt': '#F0F0EC',
+  ink: '#0A0A0A',
+  emerald: {
+    DEFAULT: '#00A878',
+    soft: '#2DB88E',
+  },
+  amber: '#F5A623',
+  mint: '#7DDBA3',
 }
 ```
 
@@ -50,10 +53,10 @@ const spaceMono = Space_Mono({
 ## Component Patterns
 
 ### Buttons (CTAs)
-- Background: `bg-electric-coral`
-- Text: `text-rebel-black` or `text-signal-white`
+- Background: `bg-emerald`
+- Text: `text-white` or `text-ink`
 - Font: Space Grotesk Medium
-- Hover: Slight scale or brightness shift (no soft transitions)
+- Hover: `hover:bg-ink` with transition
 - Strong contrast always
 
 ### Headlines
@@ -70,12 +73,13 @@ const spaceMono = Space_Mono({
 ### Stats & Numbers
 - Font: Space Mono
 - Give visual prominence
-- Use Victory Gold for achievements
+- Use Amber for achievements
 
 ### Backgrounds
-- Primary sections: `bg-rebel-black`
-- Secondary sections: `bg-steady-slate`
-- Text on dark: `text-signal-white`
+- Primary sections: `bg-paper`
+- Secondary sections: `bg-paper-alt`
+- Accent sections: `bg-emerald` or `bg-ink`
+- Text on dark: `text-paper` or `text-white`
 
 ## Design Excellence
 
@@ -102,14 +106,14 @@ The landing page must be award-calibre work. Every section, every scroll interac
 
 ## Visual Style
 
-- **High contrast** - no soft, muted aesthetics
-- **Bold** - not afraid of strong visual weight
-- **Anti-corporate wellness** - avoid pastel colors, clinical whites, stock imagery
-- Dark mode by default (rebel-black backgrounds)
+- **High contrast** - bold visual weight with clean editorial feel
+- **Bold** - not afraid of strong typographic and color presence
+- **Anti-corporate wellness** - avoid pastel pinks, clinical whites, stock imagery
+- Paper-first with Ink borders and Emerald accents
 
 ## What to Avoid
 
-- Clinical blues, passive greens
+- Clinical blues, passive pinks
 - Soft pastel color schemes
 - Stock photography aesthetic
 - Broken cigarette imagery
@@ -124,3 +128,33 @@ The landing page must be award-calibre work. Every section, every scroll interac
 - Strong visual hierarchy
 - Mobile-first design
 - Bold section breaks
+
+## Architecture Notes
+
+### Project Structure
+```
+src/
+  app/
+    layout.tsx        # Root layout with font setup (server component)
+    page.tsx          # Landing page (server component, imports client components)
+    globals.css       # CSS variables, custom classes, responsive rules
+  components/
+    AnimatedSection.tsx  # Reusable scroll-triggered reveal wrapper (client component)
+    WaitlistForm.tsx     # Email capture with Supabase + validation + states (client component)
+  lib/
+    animations.ts     # Shared Framer Motion spring presets and variant sets
+    supabase.ts       # Lazy-initialized Supabase client
+```
+
+### Key Patterns
+- **Server/client split**: `page.tsx` stays a server component for SEO. Interactive pieces (`AnimatedSection`, `WaitlistForm`) are extracted as `"use client"` components.
+- **Supabase client**: Uses lazy initialization (`getSupabase()`) to avoid crashing at build time when env vars aren't available during static generation.
+- **Animation system**: Shared presets in `lib/animations.ts` — use `fadeUp`, `slideLeft`, `slideRight`, `scaleUp`, `staggerContainer` variants with the `AnimatedSection` wrapper for consistent scroll-triggered reveals.
+- **Waitlist form**: Handles idle/loading/success/error states with Framer Motion transitions. Duplicate emails (Supabase unique constraint `23505`) are treated as success.
+
+### Supabase
+- Project ref: `pcpcczibezohuhlullab`
+- Linked via Supabase CLI in `landing-page/`
+- Waitlist table: `id` (uuid), `email` (text, unique), `created_at` (timestamptz)
+- RLS enabled with anonymous insert policy
+- Env vars in `.env.local` (gitignored)

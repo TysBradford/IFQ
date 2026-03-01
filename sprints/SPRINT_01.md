@@ -39,12 +39,12 @@ Build a landing page foundation that immediately signals premium craft and IFQ's
 
 ```javascript
 colors: {
-  'rebel-black': '#0D0D0D',
-  'electric-coral': '#FF6B5B',
-  'signal-white': '#FAFAFA',
-  'victory-gold': '#FFD93D',
-  'steady-slate': '#2D3436',
-  'soft-ember': '#FF8B7A',
+  'ink': '#0A0A0A',
+  'emerald': '#00A878',
+  'paper': '#FAFAF8',
+  'amber': '#F5A623',
+  'paper-alt': '#F0F0EC',
+  'emerald-soft': '#2DB88E',
 }
 ```
 
@@ -59,8 +59,8 @@ fontFamily: {
 ```
 
 ### Design Principles
-- **Dark-first**: Rebel Black backgrounds, not white
-- **High contrast**: Electric Coral CTAs pop against black
+- **Dark-first**: Ink backgrounds, not white
+- **High contrast**: Emerald CTAs pop against black
 - **Bold headlines**: Short, punchy, can use ALL CAPS for impact
 - **No pastels**: We're not a meditation app
 - **Mobile-first**: Design for phone, scale up
@@ -113,12 +113,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'rebel-black': '#0D0D0D',
-        'electric-coral': '#FF6B5B',
-        'signal-white': '#FAFAFA',
-        'victory-gold': '#FFD93D',
-        'steady-slate': '#2D3436',
-        'soft-ember': '#FF8B7A',
+        'ink': '#0A0A0A',
+        'emerald': '#00A878',
+        'paper': '#FAFAF8',
+        'amber': '#F5A623',
+        'paper-alt': '#F0F0EC',
+        'emerald-soft': '#2DB88E',
       },
       fontFamily: {
         display: ['var(--font-space-grotesk)', 'sans-serif'],
@@ -151,7 +151,7 @@ export default config
 │   │ Enter your email                    │   │  ← Email input
 │   └─────────────────────────────────────┘   │
 │   ┌─────────────────────────────────────┐   │
-│   │     GET EARLY ACCESS                │   │  ← CTA (Electric Coral)
+│   │     GET EARLY ACCESS                │   │  ← CTA (Emerald)
 │   └─────────────────────────────────────┘   │
 │                                             │
 │   Join 1,247 others ready to quit for good  │  ← Social proof (update dynamically)
